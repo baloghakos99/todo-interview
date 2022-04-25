@@ -16,7 +16,7 @@ export const Main = () => {
   const [lastFive, setLastFive] = useState([]);
 
   useEffect(() => {
-    setLastFive(todos.todos.slice(-5));
+    setLastFive(todos.todos.slice(-5).reverse());
   }, [todos]);
 
   return (

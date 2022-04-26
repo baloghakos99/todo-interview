@@ -7,14 +7,15 @@ import {
   useLocation,
 } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { updateTodo, removeTodo } from "../redux/todoSlice";
+import { updateTodo } from "../redux/todoSlice";
 
 function UpdateTodo(props) {
   const todos = useSelector((state) => state.todo.todos);
   const id = useLocation().pathname.split("/")[2];
-  const [description, setDescription] = useState(false);
-
   const [actualTodo, setActualTodo] = useState("");
+
+  const [description, setDescription] = useState(actualTodo.description);
+
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -33,6 +34,7 @@ function UpdateTodo(props) {
 
   useEffect(() => {
     setActualTodo(todos.find((x) => x.id === id));
+    setDescription(todos.find((x) => x.id === id).description);
   }, []);
 
   return (

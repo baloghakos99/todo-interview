@@ -72,6 +72,12 @@ body {
 
     border-radius: 25px;
 
+    p {
+      font-size: 20px;
+      margin-bottom: 20px;
+      margin-top: 0px;
+    }
+
     button {
       border-radius: 100px;
       height: 40px;
@@ -154,16 +160,20 @@ h1 {
 // -------------SORT-TODOS -------
 
 .sort-todos-box {
+  @include flexCenter(column);
+
   h1 {
     color: white;
   }
   form {
     background-image: linear-gradient(rgb(146, 146, 146), rgb(82, 81, 81));
-
+    width: 300px;
     margin: 10px;
     height: 30px;
     border-radius: 25px;
+    @include flexCenter(row);
   }
+
   label {
     font-size: 20px;
     margin-left: 20px;

@@ -2,7 +2,13 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { removeTodo, updateTodo } from "../redux/todoSlice";
-import { BrowserRouter as Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Link,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import CheckCircleOutlineOutlinedIcon from "@mui/icons-material/CheckCircleOutlineOutlined";
 import EditIcon from "@mui/icons-material/Edit";
@@ -44,11 +50,15 @@ export const TodoList = (todos) => {
           <div className="description">{todo.description}</div>
           <div className="bottom-line">
             <div className="button-box">
-              <Link to={`/update-todo/${todo.id}`}>
-                <div>
+              <div>
+                <Link
+                  to={`/update-todo/${todo.id}`}
+                  style={{ textDecoration: "none", color: "black" }}
+                >
                   <EditIcon />
-                </div>
-              </Link>
+                </Link>
+              </div>
+
               <div onClick={() => deleteTodo(todo)}>
                 <DeleteForeverRoundedIcon />
               </div>

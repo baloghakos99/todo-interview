@@ -30,36 +30,38 @@ const SortTodos = () => {
     <div className="sort-todos-box">
       <h1>All todos</h1>
       <form id="form">
-        <label>All</label>
-        <input
-          className="radio"
-          type="radio"
-          checked={radio === "All"}
-          name="status"
-          id="All"
-          value="All"
-          onChange={(e) => radioChange(e)}
-        ></input>
-        <label>Active</label>
+        <div>
+          <label>All</label>
+          <input
+            className="radio"
+            type="radio"
+            checked={radio === "All"}
+            name="status"
+            id="All"
+            value="All"
+            onChange={(e) => radioChange(e)}
+          ></input>
+          <label>Active</label>
 
-        <input
-          type="radio"
-          className="radio"
-          name="status"
-          id="Active"
-          value="Active"
-          onChange={(e) => radioChange(e)}
-        ></input>
-        <label>Done</label>
+          <input
+            type="radio"
+            className="radio"
+            name="status"
+            id="Active"
+            value="Active"
+            onChange={(e) => radioChange(e)}
+          ></input>
+          <label>Done</label>
 
-        <input
-          type="radio"
-          className="radio"
-          name="status"
-          id="Done"
-          value="Done"
-          onChange={(e) => radioChange(e)}
-        ></input>
+          <input
+            type="radio"
+            className="radio"
+            name="status"
+            id="Done"
+            value="Done"
+            onChange={(e) => radioChange(e)}
+          ></input>
+        </div>
       </form>
 
       <TodoList todos={filteredTodos}></TodoList>
